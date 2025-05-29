@@ -1,0 +1,7 @@
+# Ignore .DS_Store files on MacOS
+.DS_Store
+
+# Ignore all files in etc/local
+etc/local/*
+# But do not ignore the folder itself
+!etc/local/.gitkeep
