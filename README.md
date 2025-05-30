@@ -5,9 +5,9 @@ Visualise the sun's positioning over the day or year.
 
 ### Install requirements
 ```
-python3 -m venv var/venv
-source var/venv/bin/activate     # Activate it (Linux/macOS)
-var\venv\Scripts\activate        # On Windows
+python3 -m venv venv
+source venv/bin/activate     # Activate it (Linux/macOS)
+venv\Scripts\activate        # On Windows
 
 pip install -r requirements.txt
 ```
