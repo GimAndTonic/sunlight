@@ -1,11 +1,9 @@
+import python_helper.config_interface as config_interface
 from python_helper.logging_setup import logger
-
-import python_helper.merge_configs as merge_configs
-
 
 
 def set_var():
-    merge_configs.run()
+    config_interface.gen_config_var()
 
 def run():
     logger.info("App started")

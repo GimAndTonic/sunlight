@@ -30,7 +30,7 @@ def load_and_merge_coordinates(sunlightHome) :
 
     return coords
 
-def run() :
+def gen_config_var() :
     logger.info("Merging default and local configs: coordinates")
     sunlightHome = get_sunlight_home()
     coords = load_and_merge_coordinates(sunlightHome)
