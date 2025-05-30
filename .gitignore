@@ -5,3 +5,8 @@
 etc/local/*
 # But do not ignore the folder itself
 !etc/local/.gitkeep
+
+# Ignore all files in var
+var/*
+# But do not ignore the folder itself
+!var/.gitkeep

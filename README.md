@@ -3,6 +3,22 @@ Visualise the sun's positioning over the day or year.
 
 ## Developer Information
 
+### Install requirements
+```
+python3 -m venv var/venv
+source var/venv/bin/activate     # Activate it (Linux/macOS)
+var\venv\Scripts\activate        # On Windows
+
+pip install -r requirements.txt
+```
+
+#### Update
+```
+pip install new_package
+pip freeze > requirements.txt
+```
+
+
 ### Folder Structure
 ```
 sunlight/
