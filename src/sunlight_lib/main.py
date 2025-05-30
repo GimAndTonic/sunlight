@@ -1,6 +1,16 @@
+import os
+
 import python_helper.config_interface as config_interface
 from python_helper.logging_setup import logger
 
+def get_sunlight_home() :
+
+    sunlight_home = os.getenv("SUNLIGHT_HOME")
+
+    if not sunlight_home:
+        raise EnvironmentError("SUNLIGHT_HOME is not set")
+
+    print(f"SUNLIGHT_HOME is: {sunlight_home}")
 
 def set_var():
     config_interface.gen_config_var()
