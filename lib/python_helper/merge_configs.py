@@ -1,3 +1,5 @@
+from python_helper.logging_setup import logger
+
 import json
 from pathlib import Path
 
@@ -29,7 +31,8 @@ def load_and_merge_coordinates(sunlightHome) :
     return coords
 
 def run() :
+    logger.info("Merging default and local configs: coordinates")
     sunlightHome = get_sunlight_home()
     coords = load_and_merge_coordinates(sunlightHome)
-    print(f"Latitude: {coords['latitude']}, Longitude: {coords['longitude']}, Elevation: {coords['elevation']}")
+    logger.info(f"Latitude: {coords['latitude']}, Longitude: {coords['longitude']}, Elevation: {coords['elevation']}")
     

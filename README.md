@@ -1,6 +1,11 @@
 # sunlight
 Visualise the sun's positioning over the day or year.
 
+## Run
+```
+python bin/run_server.py
+```
+
 ## Developer Information
 
 ### Install requirements
