@@ -1,7 +1,7 @@
 import os
 
-import python_helper.config_interface as config_interface
-from python_helper.logging_setup import logger
+import config_interface as config_interface
+from logging_setup import logger
 
 def get_sunlight_home() :
 
