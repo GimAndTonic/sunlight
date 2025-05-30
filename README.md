@@ -24,8 +24,8 @@ Put it in bin/: for example bin/run_server.py or bin/start.sh
 This makes the intention clear: bin/ = things you can run
 
 Example:
-´´´
+
+´´´bash
 # bin/start.sh
 #!/bin/bash
 python3 -m src.your_app
-´´´
