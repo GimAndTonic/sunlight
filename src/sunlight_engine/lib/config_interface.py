@@ -79,5 +79,3 @@ class ConfigInterface :
         self.__logger.info("sim_config.json: %s" % coords)
 
         self.CONFIG_DIR['location'] = coords
-
-        return coords
