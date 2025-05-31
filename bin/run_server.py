@@ -1,12 +1,21 @@
 import sys
-from pathlib import Path
+import os
 
 # Add src/ and lib/ to sys.path
-sunlightHome = Path(__file__).resolve().parent.parent
-sys.path.append(str(sunlightHome / "src"))
-sys.path.append(str(sunlightHome / "lib"))
+SUNLIGHT_HOME = os.getenv("SUNLIGHT_HOME")
 
-from sunlight_lib import main
+if not SUNLIGHT_HOME :
+    print("ERROR: SUNLIGHT_HOME is not defined")
+    print("Start failed - program end.")
+    sys.exit()
+
+
+sys.path.append( os.path.join(SUNLIGHT_HOME, "src") )
+sys.path.append( os.path.join(SUNLIGHT_HOME, "src/sunlight_engine") )
+sys.path.append( os.path.join(SUNLIGHT_HOME, "src/sunlight_engine/lib") )
+#sys.path.append( os.path.join(SUNLIGHT_HOME, "lib") )
+
+from sunlight_engine import main
 
 if __name__ == "__main__":
     main.run()

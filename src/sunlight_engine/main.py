@@ -1,7 +1,10 @@
 import os
 
-import config_interface as config_interface
-from logging_setup import logger
+from config_interface import ConfigInterface
+from logging_setup import Logger
+
+logger          = Logger()
+configInterface = None
 
 def get_sunlight_home() :
 
@@ -12,15 +15,27 @@ def get_sunlight_home() :
 
     print(f"SUNLIGHT_HOME is: {sunlight_home}")
 
-def set_var():
-    config_interface.gen_config_var()
+    return sunlight_home
+
+def cleanup():
+    PATH_VAR = os.path.join( get_sunlight_home(), "var")
+    try:
+        if os.path.exists(PATH_VAR):
+            os.remove(PATH_VAR)
+            print(f"Removed: {PATH_VAR}")
+    except Exception as e:
+        logger.warning(f"Failed to remove {PATH_VAR}: {e}")
 
 def run():
     logger.info("App started")
 
     logger.info("Set runtime variables")
-    set_var()
+    configInterface = ConfigInterface()
+    configInterface.gen_runtime_config()
     logger.info("Set runtime variables: done")
+    
     print("foo")
 
+    logger.info("Shuting Down App")
+    cleanup()
     logger.info("App stopped")
