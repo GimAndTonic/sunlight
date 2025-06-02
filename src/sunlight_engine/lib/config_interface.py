@@ -8,9 +8,9 @@ from logging_setup import Logger
 class ConfigInterface :
     ##################
     ## PARAMETER::PATH
-    __CONFIG_COORD_DEFAULT    = "etc/default/sim_config.json"
-    __CONFIG_COORD_LOCAL      = "etc/local/sim_config.json"
-    __CONFIG_COORD_VAR        = "var/sim_config.json"
+    __CONFIG_DEFAULT    = "etc/default/sim_config.json"
+    __CONFIG_LOCAL      = "etc/local/sim_config.json"
+    __CONFIG_VAR        = "var/sim_config.json"
     ##
     ##################
 
@@ -42,9 +42,9 @@ class ConfigInterface :
     def gen_runtime_config(self) :
         self.__logger.info("Merging default and local configs: coordinates")
 
-        default_path = os.path.join(self.__SUNLIGHT_HOME, self.__CONFIG_COORD_DEFAULT)
-        local_path   = os.path.join(self.__SUNLIGHT_HOME, self.__CONFIG_COORD_LOCAL)
-        output_path  = os.path.join(self.__SUNLIGHT_HOME, self.__CONFIG_COORD_VAR)
+        default_path = os.path.join(self.__SUNLIGHT_HOME, self.__CONFIG_DEFAULT)
+        local_path   = os.path.join(self.__SUNLIGHT_HOME, self.__CONFIG_LOCAL)
+        output_path  = os.path.join(self.__SUNLIGHT_HOME, self.__CONFIG_VAR)
 
         # Load default config
         with open(default_path, "r") as f:
@@ -73,7 +73,7 @@ class ConfigInterface :
         self.__sys_check__()
 
         self.__logger.info("Load coordinates...")
-        path_var  = os.path.join(self.__SUNLIGHT_HOME, self.__CONFIG_COORD_VAR)
+        path_var  = os.path.join(self.__SUNLIGHT_HOME, self.__CONFIG_VAR)
         with open(path_var, "r") as f:
             coords = json.load(f)
         self.__logger.info("sim_config.json: %s" % coords)

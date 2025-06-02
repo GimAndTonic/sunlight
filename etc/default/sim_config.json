@@ -1,5 +1,15 @@
 {
-    "latitude": 59.327495,
-    "longitude": 18.054837,
-    "elevation": 0.0
+    "location":
+    {
+        "latitude"  : 59.327495,
+        "longitude" : 18.054837,
+        "elevation" : 0.0
+    },
+    "sim_time" :
+    {
+        "timezone"  : "Europe/Stockholm",
+        "year"      : 2026,
+        "period"    : 15,
+        "unit"      : "minutes"
+    }
 }
